@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div id="layoutSidenav_content">
+    <div class="container">
+        <h1>Managers with salary greater than {{ salary }}</h1>
+        <form action="{{ url_for('query2') }}" method="POST">
+            <label for="salary">Enter Salary:</label>
+            <input type="number" name="salary" id="salary" value="{{ request.form.get('salary') }}">
+            <input type="submit" value="Submit">
+        </form>
+
+        <table class="table table-light table-hover">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for manager in managers %}
+                <tr>
+                    <td>{{ manager.name }}</td>
+                    <td>{{ manager.salary }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

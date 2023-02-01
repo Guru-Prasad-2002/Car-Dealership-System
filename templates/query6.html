@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div id="layoutSidenav_content">
+    <!-- <div class="container"> -->
+        <!-- <h3>Highest selling car models based on no of sales made</h3> -->
+        <table class="table table-light table-hover">
+            <thead>
+                <tr>
+                    <th>Car Model</th>
+                    <th>Car_Id</th>
+                    <th>No of Sales</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for car in cars %}
+                <tr>
+                    <td>{{ car.model }}</td>
+                    <td>{{ car.car_id }}</td>
+                    <td>{{ car.frequency }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>        
+    <!-- </div> -->
+</div>
+{% endblock %}

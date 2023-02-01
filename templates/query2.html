@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block body %}
+
+<div id="layoutSidenav_content">
+    <table class="table table-light table-hover">
+        <thead>
+            <tr>
+                <th>Car ID</th>
+                <th>Model</th>
+                <th>Year</th>
+                <th>Color</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for car in least_expensive_cars %}
+            <tr>
+                <td>{{ car.car_id }}</td>
+                <td>{{ car.model }}</td>
+                <td>{{ car.year }}</td>
+                <td>{{ car.color }}</td>
+                <td>{{ car.price }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+{% endblock %}

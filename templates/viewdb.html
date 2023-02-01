@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+{% block body %}
+
+<style>
+    .nav-item {
+        margin: 0 10px;
+    }
+</style>
+
+<div id="layoutSidenav_content">
+    <main>
+        <div class="container-fluid px-4">
+            <h1 class="mt-4">Tables</h1>
+            <ol class="breadcrumb mb-4">
+                <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                <li class="breadcrumb-item active">Tables</li>
+            </ol>
+            <div class="card mb-4">
+                <div class="card-body">
+                    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                        <div class="container-fluid">
+                            <a class="navbar-brand text-black" href="#">Tables</a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarNav">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item">
+                                        <form action="{{url_for('viewdb_fun')}}" method="post">
+                                            <input type="hidden" name="tablename" value="Car">
+                                            <button type="submit" class="nav-link active text-black">Car</button>
+                                            <a href="{{url_for('create_record',tablename='car')}}"
+                                                class="btn btn-primary">Create</a>
+                                        </form>
+                                    </li>
+                                    <li class="nav-item">
+                                        <form action="{{url_for('viewdb_fun')}}" method="post">
+                                            <input type="hidden" name="tablename" value="Customer">
+                                            <button type="submit" class="nav-link active text-black">Customer</button>
+                                            <a href="{{url_for('create_record',tablename='customer')}}"
+                                                class="btn btn-primary"> Create</a>
+                                        </form>
+                                    </li>
+                                    <li class="nav-item">
+                                        <form action="{{url_for('viewdb_fun')}}" method="post">
+                                            <input type="hidden" name="tablename" value="Showroom">
+                                            <button type="submit" class="nav-link active text-black">Showroom</button>
+                                            <a href="{{url_for('create_record',tablename='showroom')}}"
+                                                class="btn btn-primary">Create</a>
+                                        </form>
+                                    </li>
+                                    <li class="nav-item">
+                                        <form action="{{url_for('viewdb_fun')}}" method="post">
+                                            <input type="hidden" name="tablename" value="Manager">
+                                            <button type="submit" class="nav-link active text-black">Manager</button>
+                                            <a href="{{url_for('create_record',tablename='manager')}}"
+                                                class="btn btn-primary">Create</a>
+                                        </form>
+                                    </li>
+                                    <li class="nav-item">
+                                        <form action="{{url_for('viewdb_fun')}}" method="post">
+                                            <input type="hidden" name="tablename" value="Sales">
+                                            <button type="submit" class="nav-link active text-black">Sales</button>
+                                            <!-- <a href="{{url_for('create_record',tablename='sales')}}"
+                                                class="btn btn-primary"> </a> -->
+                                        </form>
+                                    </li>
+                                    <!-- Add more table names here -->
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-table me-1"></i>
+                    {{displayname}}
+                </div>
+                <div class="card-body">
+                    {% if tablename %}
+                    <table class="table table-light table-hover">
+                        <thead>
+                            <tr>
+                                {% for column in tablename.keys() %}
+                                <th>{{column}}</th>
+                                {% endfor %}
+                            </tr>
+                        </thead>
+                        {% for row in tablename %}
+                        <tr>
+                            {% for value in row.values() %}
+                            <td>{{ value }}</td>
+                            {% endfor %}
+                            <td>
+                                <form action="{{ url_for('delete_record', tablename=displayname,id=row[0]) }}"
+                                    method="POST">
+                                    <input type="hidden" name="id" value="{{ row[0] }}">
+                            <td><button type="submit" class="btn btn-outline-light border-0">
+                                    <i class="fa fa-trash fa-sm text-danger" aria-hidden="true"></i>
+                                    </form>
+                            </td>
+                            {% if displayname != 'Sales' %}
+                            <td>
+                                <form action="{{ url_for('update_record', tablename=displayname,id=row[0]) }}"
+                                    method="POST">
+                                    <input type="hidden" name="form_type" value="update">
+                                    <button type="submit" class="btn btn-outline-light border-0">
+                                        <i class="fa fa-pencil-square fa-sm text-primary" aria-hidden="true"></i>
+                                </form>
+                            </td>
+                            {% endif %}
+                        </tr>
+                        {% endfor %}
+                    </table>
+                    {% else %}
+                    <p>The table is empty</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </main>
+    {% endblock %}

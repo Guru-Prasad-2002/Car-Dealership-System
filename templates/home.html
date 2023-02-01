@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% block body %}
+<div id="layoutSidenav_content">
+    <main>
+        <div class="container-fluid">
+            <h1 class="mt-4">Queries</h1>
+            <div class="row">
+                <div class="card text-center mb-4">
+                    <div class="card-header bg-danger text-white">
+                        Most expensive car models
+                    </div>
+                    <div class="card-body">
+                        <form action="{{ url_for('query1') }}" method="POST">
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-secondary btn-lg btn-block">Submit</button>
+                            </div>
+                            
+                        </form>
+                    </div>
+                </div>
+                <div class="card text-center mb-4">
+                    <div class="card-header bg-warning text-white">
+                        Least expensive car models
+                    </div>
+                    <div class="card-body">
+                        <form action="{{ url_for('query2') }}" method="POST">
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-secondary btn-lg btn-block">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="card text-center mb-4">
+                    <div class="card-header bg-success text-white">
+                        View Managers with Salary above a threshold
+                    </div>
+                    <div class="card-body">
+                        <form action="{{ url_for('query3') }}" method="POST">
+                            <div class="form-group">
+                                <label for="salary_threshold">Salary Threshold</label>
+                                <input type="number" class="form-control" id="salary_threshold" name="salary_threshold"
+                                    placeholder="Enter salary threshold">
+                            </div>
+                            <button type="submit" class="btn btn-secondary btn-lg btn-block">Submit</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="card text-center mb-4">
+                    <div class="card-header bg-primary text-white">
+                        View Managers with Salary below a threshold
+                    </div>
+                    <div class="card-body">
+                        <form action="{{ url_for('query4') }}" method="POST">
+                            <div class="form-group">
+                                <label for="salary_threshold">Salary Threshold</label>
+                                <input type="number" class="form-control" id="salary_threshold" name="salary_threshold"
+                                    placeholder="Enter salary threshold">
+                            </div>
+                            <button type="submit" class="btn btn-secondary btn-lg btn-block">Submit</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="card text-center mb-4">
+                    <div class="card-header bg-danger text-white">
+                        Most Regular Customers
+                    </div>
+                    <div class="card-body">
+                        <form action="{{ url_for('query5') }}" method="POST">
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-secondary btn-lg btn-block">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="card text-center mb-4">
+                    <div class="card-header bg-warning text-white">
+                        Car Models with highest sales based on no of sales made 
+                    </div>
+                    <div class="card-body">
+                        <form action="{{ url_for('query6') }}" method="POST">
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-secondary btn-lg btn-block">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- <div class="card text-center mb-4">
+                    <div class="card-header bg-success text-white">
+                        Car Models with least sales based on no of sales made 
+                    </div>
+                    <div class="card-body">
+                        <form action="{{ url_for('query7') }}" method="POST">
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-secondary btn-lg btn-block">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+</div>
+</main>
+</div>
+
+{% endblock %}

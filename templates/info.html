@@ -1,0 +1,217 @@
+{% extends "base.html" %}
+{% block body %}
+<div id="layoutSidenav_content">
+    <h2 class="Display2">Introduction</h2>
+    <div class="card border mb-3">
+        <div class="card-body text-dark">
+            <p class="card-text">
+                The Car Dealership project is a comprehensive system designed to assist the owner of a
+                car showroom chain in managing various aspects of their business. The system includes
+                key features such as the ability to enter and maintain details about showrooms, car
+                models, and employees, delete unwanted data as needed, record and track car sales
+                transactions, restock car models as needed, update information about showrooms, cars,
+                and employees, and display a range of business-related details, such as the showrooms in
+                the chain, the car models available, sales made, and known customers. The overall goal
+                of the Car Dealership project is to provide a streamlined and efficient method for the
+                owner to manage their business, stay on top of important details, and transactions. This
+                project aims to study the various features of the system and evaluate its effectiveness in
+                achieving the desired goals.
+            </p>
+        </div>
+    </div>
+    <h2 class="Display2">ER Diagram</h2>
+    <div class="card border mb-3">
+        <div class="card-body text-dark">
+            <p class="card-text">
+                An Entity Relationship Diagram is a diagram that represents relationships among entities
+                in a database. It is commonly known as an ER Diagram. An ER Diagram in DBMS plays
+                a crucial role in designing the database. An ERD uses data modeling techniques that can
+                help define business processes and serve as the foundation for a relational database. an
+                ERD can be useful for organizing data that can be represented by a relational structure, it
+                can't sufficiently represent semi-structured or unstructured data. It's also unlikely to be
+                helpful on its own in integrating data into a pre-existing information system. The ER
+                Diagram for the project is as follows
+            </p>
+        </div>
+    </div>
+    <div class="card-body text-dark text-center">
+        <img src="{{ url_for('static', filename='images/ER_Diagram.jpg') }}" class="img-thumbnail" alt="ER ER_Diagram">
+    </div>
+    <h2 class="Display2">Schema Diagram</h2>
+    <div class="card border mb-3">
+        <div class="card-body text-dark">
+            <p class="card-text">
+                A database schema is a structure that represents the logical storage of the data in a
+                database. It represents the organization of data and provides information about the
+                relationships between the tables in a given database. The schema diagram for the project
+                is as follows:
+            </p>
+        </div>
+    </div>
+    <div class="card-body text-dark text-center">
+        <img src="{{ url_for('static', filename='images/Schema_Diagram.jpg') }}" class="img-thumbnail"
+            alt="Schema Diagram">
+    </div>
+    <h2 class="Display2">Description of Various Attributes</h2>
+    <div class="card-deck">
+        <div class="card border-dark mb-3">
+            <div class="card-header">
+                <h5 class="card-title">Car</h5>
+            </div>
+            <div class="card-body text-dark">
+                <p class="card-text">
+                    <span class="text-dark-emphasis">The Car table has the following attributes:</span><br>
+                    ●<span class="font-weight-bold text-decoration-underline">car_id:</span> an integer that serves as
+                    the primary key and unique
+                    identifier for each car in the table.<br>
+                    ●<span class="font-weight-bold">model:</span> a string that stores the model of the car.<br>
+                    ●<span class="font-weight-bold">year:</span> an integer that stores the year of the car.<br>
+                    ●<span class="font-weight-bold">color:</span> a string that stores the color of the car.<br>
+                    ●<span class="font-weight-bold">price:</span> an integer that stores the price of the car.<br>
+                    ●<span class="font-weight-bold">quantity:</span> an integer that stores the quantity of that
+                    particular car model available.<br>
+                </p>
+            </div>
+        </div>
+        <div class="card border-dark mb-3">
+            <div class="card-header">
+                <h5 class="card-title">Customer</h5>
+            </div>
+            <div class="card-body text-dark">
+                <p class="card-text">
+                    <span class="text-dark-emphasis">The Customer table has the following attributes:</span><br>
+                    ●<span class="font-weight-bold  text-decoration-underline">customer_id:</span> an integer that
+                    serves as the primary key and
+                    unique identifier for each customer in the table.<br>
+                    ●<span class="font-weight-bold">name:</span> a string that stores the name of the customer.<br>
+                    ●<span class="font-weight-bold">address:</span> a string that stores the address of the
+                    customer.<br>
+                    ●<span class="font-weight-bold">phone:</span> an integer that stores the phone number of the
+                    customer.<br>
+                </p>
+            </div>
+        </div>
+        <div class="card border-dark mb-3">
+            <div class="card-header">
+                <h5 class="card-title">Showroom</h5>
+            </div>
+            <div class="card-body text-dark">
+                <p class="card-text">
+                    <span class="text-dark-emphasis">The Showroom table has the following attributes:</span><br>
+                    ●<span class="font-weight-bold  text-decoration-underline">showroom_id:</span> an integer that
+                    serves as the primary key and
+                    unique identifier for each showroom in the table.<br>
+                    ●<span class="font-weight-bold">address:</span> a string that stores the address of the
+                    showroom.<br>
+                    ●<span class="font-weight-bold">manager_id:</span> an integer that stores the id of the manager of
+                    the showroom.<br>
+                </p>
+            </div>
+        </div>
+        <div class="card border-dark mb-3">
+            <div class="card-header">
+                <h5 class="card-title">Manager</h5>
+            </div>
+            <div class="card-body text-dark">
+                <p class="card-text">
+                    <span class="text-dark-emphasis">The Manager table has the following attributes:</span><br>
+                    ●<span class="font-weight-bold  text-decoration-underline">manager_id:</span> an integer that
+                    serves as the primary key and
+                    unique identifier for each manager in the table.<br>
+                    ●<span class="font-weight-bold">name:</span> a string that stores the name of the manager.<br>
+                    ●<span class="font-weight-bold">salary:</span> an integer that stores the salary of the
+                    manager.<br>
+                    ●<span class="font-weight-bold">showroom_id:</span> an integer that stores the id of the
+                    showroom where the manager is working.<br>
+                </p>
+            </div>
+        </div>
+        <div class="card border-dark mb-3">
+            <div class="card-header">
+                <h5 class="card-title">Sales</h5>
+            </div>
+            <div class="card-body text-dark">
+                <p class="card-text">
+                    <span class="text-dark-emphasis">The Sales table has the following attributes:</span><br>
+                    ●<span class="font-weight-bold text-decoration-underline">sales_id:</span> an integer that
+                    serves as the primary key and
+                    unique identifier for each sale in the table.<br>
+                    ●<span class="font-weight-bold">car_id:</span> an integer that stores the id of the car that was
+                    sold.<br>
+                    ●<span class="font-weight-bold">customer_id:</span> an integer that stores the id of the
+                    customer who made the purchase.<br>
+                    ●<span class="font-weight-bold">showroom_id:</span> an integer that stores the id of the
+                    showroom where the car was sold.<br>
+                    ●<span class="font-weight-bold">date:</span> a date-time object that stores the date and time of
+                    the sale.<br>
+                    ●<span class="font-weight-bold">price:</span> an integer that stores the price of the car at the
+                    time of the sale.<br>
+                </p>
+            </div>
+        </div>
+        <div class="card border-dark mb-3">
+            <div class="card-header">
+                <h5 class="card-title">Table Relationships</h5>
+            </div>
+            <div class="card-body text-dark">
+                <p class="card-text">
+                    <span class="text-dark-emphasis">The relationships between the tables are:</span><br>
+                    ●<span class="font-weight-bold">Car table</span> has one to many relationship with <span
+                        class="font-weight-bold">Sales table</span> (1 car can be sold many times)<br>
+                    ●<span class="font-weight-bold">Customer table</span> has one to many relationship with <span
+                        class="font-weight-bold">Sales table</span> (1 customer can buy many cars)<br>
+                    ●<span class="font-weight-bold">Showroom table</span> has one to many relationship with <span
+                        class="font-weight-bold">Sales table</span> (1 showroom can sell many cars)<br>
+                    ●<span class="font-weight-bold">Showroom table</span> has one to one relationship with <span
+                        class="font-weight-bold">Manager table</span> (1 showroom has 1 manager)<br>
+                    ●<span class="font-weight-bold">Manager table</span> has one to one relationship with <span
+                        class="font-weight-bold">Showroom table</span> (1 manager manages 1 showroom)
+                </p>
+            </div>
+        </div>
+    </div>
+    <h2 class="Display2">Queries</h2>
+    <div class="card border mb-3">
+        <div class="card-body text-dark">
+            <p class="card-text">
+                <span class="text-dark-emphasis">The home page of our system is designed to provide the user with
+                    various views on the
+                    data stored in the database. In order to achieve this, the page implements the following
+                    four queries:</span><br>
+                ●<span class="font-weight-bold">Managers earning above a certain threshold:</span> This query
+                retrieves the managers from the "manager" table whose salary is above the specified threshold. This
+                allows the user to see which managers are earning the most and make informed decisions.<br>
+                ●<span class="font-weight-bold">Most expensive and least expensive car models:</span> This query
+                retrieves the car models from the "car" table and orders them by price, displaying the most and
+                least expensive models. This allows the user to see which car models are the most profitable and
+                which ones are not selling well.<br>
+                ●<span class="font-weight-bold">Most regular customers:</span> This query retrieves the customers
+                from the "customer" table and orders them by the number of purchases they have made. This allows the
+                user to identify which customers are the most loyal and make informed decisions on how to retain
+                them.<br>
+                ●<span class="font-weight-bold">Car models with highest and least sales:</span> This query retrieves
+                the car models from the "car" table and orders them by the number of sales they have. This allows
+                the user to identify which car models are the most popular and make informed decisions on which
+                models to stock more of.<br>
+            </p>
+        </div>
+    </div>
+    <h2 class="Display2">Sell</h2>
+    <div class="card border mb-3">
+        <div class="card-body text-dark">
+            <p class="card-text">
+                The sales page of our system is designed to facilitate the process of making a sale by
+                allowing the admin to enter the car ID and the sales ID. On submitting the form, the
+                corresponding action is performed in the backend, updating the relevant tables in the
+                database.
+                Specifically, when a sale is made, the number of cars in the inventory for that particular
+                car ID is reduced by one. Additionally, a new entry is made in the sales table, recording
+                the details of the sale such as car ID, customer ID, and showroom ID.
+                Overall, the sales page provides an easy and efficient way to make a sale, allowing the
+                user to quickly and easily update the inventory and sales records in the database. This
+                improves the overall workflow of the system and helps the user to keep track of the sales
+                easily.
+            </p>
+        </div>
+    </div>
+    {% endblock %}

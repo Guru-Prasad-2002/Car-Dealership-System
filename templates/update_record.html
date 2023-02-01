@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block body %}
+<div id="layoutSidenav_content">
+    <div class="container">
+        <h2>Update {{ tablename }} Record {{ id }}</h2>
+        <form action="{{url_for('update_record', tablename=tablename,id=id)}}" method="post">
+            {% for column in columns %}
+            <div class="form-group">
+                <label for="{{column}}">{{column}}:</label>
+                <input type="text" class="form-control" id="{{column}}" name="{{column}}" value="{{record[column]}}"
+                    required>
+            </div>
+            {% endfor %}
+            <form action="{{ url_for('update_record', tablename=tablename, id=id) }}" method="POST">
+                <input type="hidden" name="_method" value="PUT">
+                <input type="submit" class="btn btn-primary" value="Update">
+            </form>
+        </form>
+        </form>
+    </div>
+</div>
+{% endblock %}

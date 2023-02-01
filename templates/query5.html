@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div id="layoutSidenav_content">
+    <div class="container">
+        <h1>Customers Based on Freequency</h1>
+        <table class="table table-light table-hover">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Customer_Id</th>
+                    <th>Frequency</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for customer in customers %}
+                <tr>
+                    <td>{{ customer.name }}</td>
+                    <td>{{ customer.customer_id }}</td>
+                    <td>{{ customer.frequency }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>        
+    </div>
+</div>
+{% endblock %}
