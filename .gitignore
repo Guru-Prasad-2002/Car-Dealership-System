@@ -6,4 +6,6 @@ instance/
 
 venv/
 
-*.db
+*.pdf
+*.docx
+# *.db
