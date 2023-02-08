@@ -58,14 +58,14 @@ The system supports the following queries:
 
 ## Schema Diagram
 
-![Main_Page](https://user-images.githubusercontent.com/95089491/217521613-8fdc1db1-e3d3-4d54-ba08-261240c90bf7.jpg)
+<!-- ![Main_Page](https://user-images.githubusercontent.com/95089491/217521613-8fdc1db1-e3d3-4d54-ba08-261240c90bf7.jpg)
 <p align="center">
   <strong>Main UI</strong>
-</p>
+</p> -->
 
 ## Screenshots
 
-![Main_Page](https://user-images.githubusercontent.com/95089491/217521613-8fdc1db1-e3d3-4d54-ba08-261240c90bf7.jpg)
+<!-- ![Main_Page](https://user-images.githubusercontent.com/95089491/217521613-8fdc1db1-e3d3-4d54-ba08-261240c90bf7.jpg)
 <p align="center">
   <strong>Main UI</strong>
 </p>
@@ -73,7 +73,7 @@ The system supports the following queries:
 ![Main_Page](https://user-images.githubusercontent.com/95089491/217521613-8fdc1db1-e3d3-4d54-ba08-261240c90bf7.jpg)
 <p align="center">
   <strong>Main UI</strong>
-</p>
+</p> -->
 
 
 
