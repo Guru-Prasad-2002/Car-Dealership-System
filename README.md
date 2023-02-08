@@ -1,52 +1,66 @@
 # Car Dealership System
 
-This is a simple car dealership system that allows users to add cars to the system, view cars, and delete cars.
+A web-based car dealership system built using Flask, Flask-SQLAlchemy, and Bootstrap. This system helps manage the car dealership's cars, customers, showrooms, managers, and sales.
 
-## Installation
+## Getting Started
 
 1. Clone the repository
-2. Run `pip install -r requirements.txt` to install dependencies
+2. Run `pip install -r Requirements.txt` to install dependencies
 3. Run `python app.py` to start the server
 4. Navigate to `localhost:5000` in your browser
 5. Login with the following credentials:
    - Username: admin
    - Password: password
 
-## Usage
+## Tables
 
+The system consists of five tables:
 
-## Contributing
+- Car: includes car_id, model, year, color, price, and quantity
+- Customer: includes customer_id, name, address, and phone
+- Showroom: includes showroom_id, address, and manager_id
+- Manager: includes manager_id, name, salary, and showroom_id
+- Sales: includes sales_id, car_id, customer_id, showroom_id, date, and price
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+## Relationships
 
-Please make sure to update tests as appropriate.
+The tables have the following relationships:
 
-## Authors and acknowledgment
+- Car has a one to many relationship with Sales
+- Customer has a one to many relationship with Sales
+- Showroom has a one to many relationship with Sales
+- Showroom has a one to one relationship with Manager
+- Manager has a one to one relationship with Showroom
 
-[Chinedu Nwadike](
+## Features
 
-## Project status
+The system provides the following features:
 
-This project is currently in development. Users can currently add cars to the system, view cars, and delete cars.
+- CRUD operations to add, delete, and modify records from the tables
+- An info page with general information about the project
+- A sell operation that updates relevant tables in the backend when a car is sold
 
-## Roadmap
+## Queries
 
-- Add a car image
-- Add a car description
-- Add a car price
-- Add a car year
-- Add a car make
-- Add a car model
-- Add a car color
-- Add a car mileage
-- Add a car transmission
-- Add a car engine
-- Add a car fuel type
-- Add a car drive type
-- Add a car body style
-- Add a car interior color
+The system supports the following queries:
+
+- Most/Least expensive car models
+- View managers above and below a certain salary threshold
+- Most regular customer
+- Car models with the highest sales based on the number of sales made
+
+## ER Diagram
+
+## Schema Diagram
 
 ## Screenshots
+
+
+
+
+
+
+
 
 
 
